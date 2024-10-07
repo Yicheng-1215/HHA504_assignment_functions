@@ -1,0 +1,15 @@
+name: Scheduled Task
+
+on:
+  schedule:
+    # Runs at midnight every day
+    - cron: '0 0 * * *'
+
+jobs:
+  run-scheduled-task:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Execute scheduled task
+      run: echo "Scheduled task executed"
